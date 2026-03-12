@@ -1,0 +1,47 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.*;
+class TestClass {
+    public static void main(String args[] )  {
+       Scanner sc=new Scanner(System.in);
+       int t=sc.nextInt();
+       for(int i=0;i<t;i++)
+       {
+        int n=sc.nextInt();
+        int[] arr=new int[n];
+        for(int j=0;j<n;j++)
+        {
+            arr[j]=sc.nextInt();
+        }
+
+        List<Integer> odd=new ArrayList<>();
+        List<Integer> even=new ArrayList<>();
+
+        for(int num:arr)
+        {
+            int bits=Integer.bitCount(num);
+            if(bits%2==0)
+            {
+                even.add(num);
+            }
+            else
+            {
+                odd.add(num);
+            }
+        }
+
+        Collections.sort(odd);
+        Collections.sort(even);
+        for(int num:even)
+        {
+            System.out.print(num+" ");
+        }
+        for(int num:odd)
+        {
+            System.out.print(num+" ");
+        }
+        System.out.println();
+
+       }
+    }
+}
